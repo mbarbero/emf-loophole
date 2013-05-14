@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<loophole:GenGapModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:loophole="org.eclipselabs.emf.loophole:1.0.0" customModelDirectory="/org.eclipselabs.emf.loophole/src" cleanModelDirectory="true" customEditDirectory="/org.eclipselabs.emf.loophole/src">
+  <genModel href="loophole.genmodel#/"/>
+  <genGapPackages customClassPackageSuffix="internal.model.impl" customProviderPackageSuffix="internal.model.provider">
+    <genPackage href="loophole.genmodel#//loophole"/>
+  </genGapPackages>
+</loophole:GenGapModel>

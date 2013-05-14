@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2013 Obeo.&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA;&#xA;Contributors:&#xA;     Obeo - initial API and implementation"
+    modelDirectory="/org.eclipselabs.emf.loophole/src-gen" creationIcons="false" editDirectory="/org.eclipselabs.emf.loophole/src-gen"
+    editorDirectory="/org.eclipselabs.emf.loophole.editor/src-gen" modelPluginID="org.eclipselabs.emf.loophole"
+    modelName="Loophole" modelPluginClass="" editPluginClass="org.eclipselabs.emf.loophole.internal.LoopholePlugin"
+    editorPluginClass="org.eclipselabs.emf.loophole.internal.presentation.LoopholeEditorPlugin"
+    updateClasspath="false" nonNLSMarkers="true" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" binaryCompatibleReflectiveMethods="true"
+    providerRootExtendsClass="" runtimeVersion="2.5" language="" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.genmodel#//genmodel"
+    classNamePattern="Basic{0}Impl">
+  <foreignModel>loophole.ecore</foreignModel>
+  <genPackages prefix="Loophole" basePackage="org.eclipselabs.emf" disposableProviderFactory="true"
+      interfacePackageSuffix="internal.model" metaDataPackageSuffix="internal.model.metadata"
+      classPackageSuffix="internal.model.impl" utilityPackageSuffix="internal.model.util"
+      providerPackageSuffix="internal.model.provider" presentationPackageSuffix="internal.model.presentation"
+      testsPackageSuffix="internal.model.tests" multipleEditorPages="false" fileExtensions="gengapmodel"
+      ecorePackage="loophole.ecore#/">
+    <genClasses image="false" ecoreClass="loophole.ecore#//GenGapModel">
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference loophole.ecore#//GenGapModel/genModel"/>
+      <genFeatures createChild="false" propertyCategory="Model" propertyDescription="Pattern for deriving custom implementation and item provider names from model element names (&quot;{0}CustomImpl&quot; by default)"
+          ecoreFeature="ecore:EAttribute loophole.ecore#//GenGapModel/customClassNamePattern"/>
+      <genFeatures createChild="false" propertyCategory="Model" propertyDescription="Whether all custom implementation classes should be generated  "
+          ecoreFeature="ecore:EAttribute loophole.ecore#//GenGapModel/generateCustomClasses"/>
+      <genFeatures createChild="false" propertyCategory="Model" propertyDescription="The target directory for custom model code"
+          ecoreFeature="ecore:EAttribute loophole.ecore#//GenGapModel/customModelDirectory"/>
+      <genFeatures createChild="false" propertyCategory="Model" propertyDescription="Whether the source folder containing generated model classes should be cleaned"
+          ecoreFeature="ecore:EAttribute loophole.ecore#//GenGapModel/cleanModelDirectory"/>
+      <genFeatures createChild="false" propertyCategory="Edit" propertyDescription="Whether all custom item providers should be generated  "
+          ecoreFeature="ecore:EAttribute loophole.ecore#//GenGapModel/generateCustomProviders"/>
+      <genFeatures createChild="false" propertyCategory="Edit" propertyDescription="The target directory for custom edit code"
+          ecoreFeature="ecore:EAttribute loophole.ecore#//GenGapModel/customEditDirectory"/>
+      <genFeatures createChild="false" propertyCategory="Edit" propertyDescription="Whether the source folder containing generated item provider should be cleaned"
+          ecoreFeature="ecore:EAttribute loophole.ecore#//GenGapModel/cleanEditDirectory"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference loophole.ecore#//GenGapModel/genGapPackages"/>
+      <genOperations ecoreOperation="loophole.ecore#//GenGapModel/reconcile"/>
+      <genOperations ecoreOperation="loophole.ecore#//GenGapModel/reconcile.1">
+        <genParameters ecoreParameter="loophole.ecore#//GenGapModel/reconcile.1/genGapModel"/>
+      </genOperations>
+      <genOperations ecoreOperation="loophole.ecore#//GenGapModel/initialize">
+        <genParameters ecoreParameter="loophole.ecore#//GenGapModel/initialize/genModel"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="loophole.ecore#//GenGapPackage">
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference loophole.ecore#//GenGapPackage/genPackage"/>
+      <genFeatures createChild="false" propertyCategory="Model" propertyDescription="The suffix of the package for custom model class"
+          ecoreFeature="ecore:EAttribute loophole.ecore#//GenGapPackage/customClassPackageSuffix"/>
+      <genFeatures createChild="false" propertyCategory="Edit" propertyDescription="The suffix of the package for custom item providers"
+          ecoreFeature="ecore:EAttribute loophole.ecore#//GenGapPackage/customProviderPackageSuffix"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference loophole.ecore#//GenGapPackage/nestedGenGapPackages"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference loophole.ecore#//GenGapPackage/superGenGapPackage"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference loophole.ecore#//GenGapPackage/genGapModel"/>
+      <genOperations ecoreOperation="loophole.ecore#//GenGapPackage/reconcile"/>
+      <genOperations ecoreOperation="loophole.ecore#//GenGapPackage/reconcile.1">
+        <genParameters ecoreParameter="loophole.ecore#//GenGapPackage/reconcile.1/genGapPackage"/>
+      </genOperations>
+      <genOperations ecoreOperation="loophole.ecore#//GenGapPackage/initialize">
+        <genParameters ecoreParameter="loophole.ecore#//GenGapPackage/initialize/genPackage"/>
+      </genOperations>
+      <genOperations ecoreOperation="loophole.ecore#//GenGapPackage/getCustomQualifiedClassName">
+        <genParameters ecoreParameter="loophole.ecore#//GenGapPackage/getCustomQualifiedClassName/genClass"/>
+      </genOperations>
+      <genOperations ecoreOperation="loophole.ecore#//GenGapPackage/getCustomQualifiedProviderClassName">
+        <genParameters ecoreParameter="loophole.ecore#//GenGapPackage/getCustomQualifiedProviderClassName/genClass"/>
+      </genOperations>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

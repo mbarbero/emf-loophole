@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="org.eclipselabs.emf.loophole" version="2.7.0.qualifier">
+      <category name="loophole-2.7"/>
+   </feature>
+   <category-def name="loophole-2.7" label="EMF Loophole for EMF 2.7">
+      <description>
+         EMF Loophole helps you implement the generation gap pattern for EMF code generation.
+      </description>
+   </category-def>
+</site>

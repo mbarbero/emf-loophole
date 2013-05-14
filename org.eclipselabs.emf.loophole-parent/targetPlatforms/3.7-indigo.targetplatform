@@ -1,0 +1,8 @@
+target "Loophole 3.7-Indigo Target Platform"
+
+location "http://download.eclipse.org/releases/indigo" {
+	with source, requirements
+	org.eclipse.emf.sdk.feature.group
+	org.eclipse.jdt.feature.group
+	org.eclipse.platform.feature.group
+}

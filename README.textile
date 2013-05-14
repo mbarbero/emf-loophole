@@ -1,0 +1,82 @@
+h1. EMF Loophole - Generation Gap Pattern tooling
+
+EMF Loophole is a tool that hooks into the EMF codegen and helps you implement the generation gap pattern. This pattern is about separating generated code and the handwritten one in two separate classes, the handwritten one inheriting from the generated one.
+
+!http://img51.imageshack.us/img51/9152/loopholeeditor.png(The Loophole model editor)!
+
+This project is based on the ideas described in a blog post by Heiko Behrens (http://heikobehrens.net/2009/04/23/generation-gap-pattern/) and a basic implementation in MWE 2 (http://download.eclipse.org/modeling/emft/mwe/javadoc/2.3/org/eclipse/emf/mwe2/ecore/EcoreGenerator.html)
+
+h2. Installation
+
+EMF Loophole is supporting all EMF versions since 2.5. Add one of the following p2 repository (update-site) in your update manager (in Eclipse, @Help Menu > Install New Software...@, @Add...@ button on the top right corner):
+
+*http://mbarbero.github.io/emf-loophole/2.5/* for EMF 2.5
+
+*http://mbarbero.github.io/emf-loophole/2.6/* for EMF 2.6
+
+*http://mbarbero.github.io/emf-loophole/2.7/* for EMF 2.7
+
+*http://mbarbero.github.io/emf-loophole/2.8/* for EMF 2.8
+
+*http://mbarbero.github.io/emf-loophole/2.9/* for EMF 2.9
+
+or add the following composite update site referencing all of these versions:
+
+h3. *http://mbarbero.github.io/emf-loophole/*
+
+Then, select the "EMF Loophole" feature and click on @Finish@.
+
+h3. Requirements
+
+* Java SE 5
+
+* Eclipse 3.5+ (Galileo)
+
+h2. Basic usage
+
+* File > New > Eclipse Modeling Framework > Loophole Generator model
+
+* Click Next, then select the Generator model (.genmodel) file you want to reference (if a genmodel file was selected before launching the wizard, it has already been set to this one)
+
+* Click Finish
+
+h3. GenGapModel Options
+
+h4. Model
+
+* **customClassNamePattern** Pattern for deriving custom implementation and item provider names from model element names ("{0}CustomImpl" by default)
+* **generateCustomClasses** Whether all custom implementation classes should be generated  
+* **customModelDirectory** The target directory for custom model code
+* **cleanModelDirectory** Whether the source folder containing generated model classes should be cleaned
+
+h4. Edit
+
+* **generateCustomProviders** Whether all custom item providers should be generated  
+* **customEditDirectory** The target directory for custom edit code
+* **cleanEditDirectory** Whether the source folder containing generated item provider should be cleaned
+
+h4. GenGapPackage Options
+
+h4. Model
+
+* **customClassPackageSuffix** The suffix of the package for custom model class
+
+h4. Edit
+
+* **customProviderPackageSuffix** The suffix of the package for custom item providers
+
+h2. Limitations
+
+It is not possible to reference a Loophole Generator (.gengapmodel) model from another one. Then it is not possible to create customized Ecore models that reference each others.
+
+h2. Build
+
+Go to @org.eclipselabs.emf.loophole-parent@ and do a @mvn clean package@.
+
+h2. Contribute
+
+Clone this repository, import all projects in your Eclipse and set your target platform to the one in @org.eclipselabs.emf.loophole-parent/targetPlatforms@.
+
+h2. License
+
+Copyright (c) 2013 Obeo. All rights reserved. This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html 

@@ -1,0 +1,8 @@
+target "Loophole 4.3-Kepler Target Platform"
+
+location "http://download.eclipse.org/releases/kepler" {
+	with source, requirements
+	org.eclipse.emf.sdk.feature.group
+	org.eclipse.jdt.feature.group
+	org.eclipse.platform.feature.group
+}

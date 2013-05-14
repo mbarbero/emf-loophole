@@ -1,0 +1,8 @@
+target "Loophole 3.6-Helios Target Platform"
+
+location "http://download.eclipse.org/releases/helios" {
+	with source, requirements
+	org.eclipse.emf.sdk.feature.group
+	org.eclipse.jdt.feature.group
+	org.eclipse.platform.feature.group
+}

@@ -1,0 +1,8 @@
+target "Loophole 3.5-Galileo Target Platform"
+
+location "http://download.eclipse.org/releases/galileo" {
+	with source, requirements
+	org.eclipse.emf.sdk.feature.group
+	org.eclipse.jdt.feature.group
+	org.eclipse.platform.feature.group
+}
