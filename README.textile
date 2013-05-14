@@ -55,7 +55,7 @@ h4. Edit
 * **customEditDirectory** The target directory for custom edit code
 * **cleanEditDirectory** Whether the source folder containing generated item provider should be cleaned
 
-h4. GenGapPackage Options
+h3. GenGapPackage Options
 
 h4. Model
 
