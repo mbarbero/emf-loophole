@@ -1,4 +1,6 @@
-h1. EMF Loophole - Generation Gap Pattern tooling
+h1. EMF Loophole 
+
+*Generation Gap Pattern Tooling*
 
 EMF Loophole is a tool that hooks into the EMF codegen and helps you implement the generation gap pattern. This pattern is about separating generated code and the handwritten one in two separate classes, the handwritten one inheriting from the generated one.
 
@@ -8,23 +10,23 @@ This project is based on the ideas described in a blog post by Heiko Behrens (ht
 
 h2. Installation
 
-EMF Loophole is supporting all EMF versions since 2.5. Add one of the following p2 repository (update-site) in your update manager (in Eclipse, @Help Menu > Install New Software...@, @Add...@ button on the top right corner):
+EMF Loophole is released in several versions, one for each EMF version. The following Eclipse p2 repository (update-site) in your update manager (in Eclipse, @Help Menu > Install New Software...@, @Add...@ button on the top right corner) provides all releases for all versions:
 
-*http://mbarbero.github.io/emf-loophole/2.5/* for EMF 2.5
+*http://mbarbero.github.io/emf-loophole/*
 
-*http://mbarbero.github.io/emf-loophole/2.6/* for EMF 2.6
+The releases for each EMF version can be a accessed with the following URLs:
 
-*http://mbarbero.github.io/emf-loophole/2.7/* for EMF 2.7
+* http://mbarbero.github.io/emf-loophole/2.5/ for EMF 2.5
 
-*http://mbarbero.github.io/emf-loophole/2.8/* for EMF 2.8
+* http://mbarbero.github.io/emf-loophole/2.6/ for EMF 2.6
 
-*http://mbarbero.github.io/emf-loophole/2.9/* for EMF 2.9
+* http://mbarbero.github.io/emf-loophole/2.7/ for EMF 2.7
 
-or add the following composite update site referencing all of these versions:
+* http://mbarbero.github.io/emf-loophole/2.8/ for EMF 2.8
 
-h3. *http://mbarbero.github.io/emf-loophole/*
+* http://mbarbero.github.io/emf-loophole/2.9/ for EMF 2.9
 
-Then, select the "EMF Loophole" feature and click on @Finish@.
+Then, select the "EMF Loophole" feature suitable for you and click on @Finish@.
 
 h3. Requirements
 
