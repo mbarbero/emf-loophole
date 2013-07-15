@@ -13,7 +13,7 @@ for v in ${VERSIONS[@]}; do
 	./comp-repo.sh ${v} \
 		--name "EMF Loophole releases repository for EMF ${v}" \
 		--eclipse '/Applications/eclipse 3.8.2' \
-		add ${v}/${TIMESTAMP}/
+		add ${TIMESTAMP}/
 
 	thisFolder=`pwd`
 	./comp-repo.sh ${thisFolder} \
