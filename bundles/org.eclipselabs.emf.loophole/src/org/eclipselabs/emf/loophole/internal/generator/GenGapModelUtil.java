@@ -15,6 +15,7 @@ import java.util.Map;
 import org.eclipse.emf.codegen.ecore.generator.Generator;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
+import org.eclipse.emf.codegen.ecore.genmodel.impl.GenModelPackageImpl;
 import org.eclipse.emf.codegen.merge.java.JControlModel;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.formatter.DefaultCodeFormatterConstants;
@@ -25,9 +26,17 @@ public class GenGapModelUtil {
 	  public static Generator createGenerator(GenGapModel genGapModel)
 	  {
 		GenModel genModel = genGapModel.getGenModel();
-	    Generator generator = new Generator();
+	    Generator generator = new Generator() {
+	    	@Override
+	    	protected String getPackageID(Object object) {
+	    		// always use package name to be compatible with all UML Genmodel versions
+	    		// we don't know beforehand all nsURIs of UML Genmodel
+	    		return object.getClass().getPackage().getName();
+	    	}
+	    };
 	    
-	    generator.getAdapterFactoryDescriptorRegistry().addDescriptor(GenModelPackage.eNS_URI, new LoopholeGeneratorAdapterDescriptor(genGapModel));
+	    generator.getAdapterFactoryDescriptorRegistry().addDescriptor(GenModelPackageImpl.class.getPackage().getName(), new LoopholeGeneratorAdapterDescriptor(genGapModel));
+	    generator.getAdapterFactoryDescriptorRegistry().addDescriptor("org.eclipse.uml2.codegen.ecore.genmodel.impl", new LoopholeGeneratorAdapterDescriptor(genGapModel));
 	    
 	    generator.setInput(genModel);
 	    JControlModel jControlModel = generator.getJControlModel();
