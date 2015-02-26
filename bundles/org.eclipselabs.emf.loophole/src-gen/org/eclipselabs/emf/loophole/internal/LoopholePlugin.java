@@ -10,7 +10,6 @@
  */
 package org.eclipselabs.emf.loophole.internal;
 
-import org.eclipse.emf.codegen.ecore.genmodel.provider.GenModelEditPlugin;
 
 import org.eclipse.emf.common.EMFPlugin;
 
@@ -51,7 +50,7 @@ public final class LoopholePlugin extends EMFPlugin {
 		super
 		  (new ResourceLocator [] {
 		     EcoreEditPlugin.INSTANCE,
-		     GenModelEditPlugin.INSTANCE,
+//		     GenModelEditPlugin.INSTANCE,
 		   });
 	}
 
