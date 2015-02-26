@@ -1,7 +1,14 @@
-/*****************************************************************************
- * Copyright (C) Compart AG, 2015 - Compart confidential
+/*******************************************************************************
+ * Copyright (c) 2014 Dennis Melzer and others.
  *
- *****************************************************************************/
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ * Dennis - initial API and implementation
+ ******************************************************************************/
 
 package org.eclipselabs.emf.loophole.workflow;
 
@@ -22,7 +29,7 @@ import org.eclipselabs.emf.loophole.internal.model.GenGapModel;
 import org.eclipselabs.emf.loophole.internal.model.metadata.LoopholeFactory;
 
 /**
- *
+ * @author Dennis Melzer
  */
 public class LoopholeWorkflow implements IWorkflowComponent {
 
