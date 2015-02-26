@@ -43,6 +43,7 @@
     <!-- Bundles -->
     <module>../bundles/org.eclipselabs.emf.loophole</module>
     <module>../bundles/org.eclipselabs.emf.loophole.ui</module>
+    <module>../bundles/org.eclipselabs.emf.loophole.workflow</module>
 
 	<!-- Fragments -->    
     <module>../bundles/org.eclipselabs.emf.loophole_2.5</module>
