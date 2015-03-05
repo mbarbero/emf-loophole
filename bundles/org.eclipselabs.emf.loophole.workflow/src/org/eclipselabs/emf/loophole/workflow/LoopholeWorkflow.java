@@ -42,6 +42,16 @@ public class LoopholeWorkflow implements IWorkflowComponent {
     private String customModelDirectory;
     private boolean generateCustomClasses = false;
     private boolean generateCustomProviders = false;
+    private boolean cleanModelDirectory = true;
+    private boolean cleanEditDirectory = true;
+
+    public void setCleanModelDirectory(boolean cleanModelDirectory) {
+        this.cleanModelDirectory = cleanModelDirectory;
+    }
+
+    public void setCleanEditDirectory(boolean cleanEditDirectory) {
+        this.cleanEditDirectory = cleanEditDirectory;
+    }
 
     @Mandatory
     public void setCustomClassNamePattern(String customClassNamePattern) {
@@ -102,6 +112,8 @@ public class LoopholeWorkflow implements IWorkflowComponent {
         genGapModel.setCustomEditDirectory(this.customEditDirectory);
         genGapModel.setGenerateCustomClasses(this.generateCustomClasses);
         genGapModel.setGenerateCustomProviders(this.generateCustomProviders);
+        genGapModel.setCleanModelDirectory(this.cleanModelDirectory);
+        genGapModel.setCleanEditDirectory(this.cleanEditDirectory);
 
         Generator generator = GenGapModelUtil.createGenerator(genGapModel);
         Diagnostic diagnostic = generator.generate(genModel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE,
