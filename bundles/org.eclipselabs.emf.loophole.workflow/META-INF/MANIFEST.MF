@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Workflow
 Bundle-SymbolicName: org.eclipselabs.emf.loophole.workflow
 Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Import-Package: org.apache.log4j;version="[1.2.15,2.0.0)",
  org.eclipselabs.emf.loophole.internal.generator;version="[1.0.0,2.0.0)",
  org.eclipselabs.emf.loophole.internal.model;version="[1.0.0,2.0.0)",

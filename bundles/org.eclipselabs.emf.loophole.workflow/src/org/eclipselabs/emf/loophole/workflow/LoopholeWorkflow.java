@@ -92,7 +92,6 @@ public class LoopholeWorkflow implements IWorkflowComponent {
         this.generateEdit = generateEdit;
     }
 
-    @Override
     public void preInvoke() {
         getResourceSet().getResource(URI.createURI(this.genModel), true);
 
@@ -102,7 +101,6 @@ public class LoopholeWorkflow implements IWorkflowComponent {
         return this.resourceSet == null ? new ResourceSetImpl() : this.resourceSet;
     }
 
-    @Override
     public void invoke(IWorkflowContext ctx) {
         ResourceSet resSet = getResourceSet();
         Resource resource = resSet.getResource(URI.createURI(this.genModel), true);
@@ -161,7 +159,6 @@ public class LoopholeWorkflow implements IWorkflowComponent {
         }
     }
 
-    @Override
     public void postInvoke() {
         // TODO Auto-generated method stub
 
