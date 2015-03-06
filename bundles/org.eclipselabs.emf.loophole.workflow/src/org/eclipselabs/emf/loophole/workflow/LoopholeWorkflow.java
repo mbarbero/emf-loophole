@@ -12,15 +12,20 @@
 
 package org.eclipselabs.emf.loophole.workflow;
 
+import java.io.FileNotFoundException;
+
+import org.apache.log4j.Logger;
 import org.eclipse.emf.codegen.ecore.generator.Generator;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
 import org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.mwe.utils.DirectoryCleaner;
 import org.eclipse.emf.mwe2.runtime.Mandatory;
 import org.eclipse.emf.mwe2.runtime.workflow.IWorkflowComponent;
 import org.eclipse.emf.mwe2.runtime.workflow.IWorkflowContext;
@@ -32,6 +37,8 @@ import org.eclipselabs.emf.loophole.internal.model.metadata.LoopholeFactory;
  * @author Dennis Melzer
  */
 public class LoopholeWorkflow implements IWorkflowComponent {
+
+    private static Logger LOGGER = Logger.getLogger(LoopholeWorkflow.class);
 
     private boolean generateEdit = false;
     private String genModel;
@@ -115,22 +122,43 @@ public class LoopholeWorkflow implements IWorkflowComponent {
         genGapModel.setCleanModelDirectory(this.cleanModelDirectory);
         genGapModel.setCleanEditDirectory(this.cleanEditDirectory);
 
+        if (genGapModel.isCleanModelDirectory()) {
+            cleanFolder(genGapModel.getGenModel().getModelDirectory());
+        }
+        if (genGapModel.isCleanEditDirectory()) {
+            cleanFolder(genGapModel.getGenModel().getEditDirectory());
+        }
+
+        LOGGER.info("generating EMF code for " + this.genModel);
         Generator generator = GenGapModelUtil.createGenerator(genGapModel);
         Diagnostic diagnostic = generator.generate(genModel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE,
                 new BasicMonitor());
 
         if (diagnostic.getSeverity() != Diagnostic.OK) {
-            System.out.println(diagnostic);
+            LOGGER.error(diagnostic);
         }
 
         if (this.generateEdit) {
+            LOGGER.info("generating EMF Edit code for " + this.genModel);
             Diagnostic editDiag = generator.generate(genModel, GenBaseGeneratorAdapter.EDIT_PROJECT_TYPE,
                     new BasicMonitor());
             if (editDiag.getSeverity() != Diagnostic.OK) {
-                System.out.println(diagnostic);
+                LOGGER.error(diagnostic);
             }
         }
 
+    }
+
+    private void cleanFolder(String directory) {
+        URI file = EcorePlugin.resolvePlatformResourcePath(directory);
+        DirectoryCleaner cleaner = new DirectoryCleaner();
+        String filePath = file.toFileString();
+        LOGGER.info("Cleaning Resource " + filePath);
+        try {
+            cleaner.cleanFolder(filePath);
+        } catch (FileNotFoundException e) {
+            LOGGER.error("Cannot found file " + this.customEditDirectory, e);
+        }
     }
 
     @Override
