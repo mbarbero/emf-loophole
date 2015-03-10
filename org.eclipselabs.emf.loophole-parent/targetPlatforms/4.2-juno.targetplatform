@@ -1,8 +1,0 @@
-target "Loophole 4.2-Juno Target Platform"
-
-location "http://download.eclipse.org/releases/juno" {
-	with source, requirements
-	org.eclipse.emf.sdk.feature.group
-	org.eclipse.jdt.feature.group
-	org.eclipse.platform.feature.group
-}
