@@ -1,4 +1,4 @@
-h1. EMF Loophole 
+# EMF Loophole 
 
 *Generation Gap Pattern Tooling*
 
@@ -7,23 +7,23 @@ EMF Loophole is a tool that hooks into the EMF codegen and helps you implement t
 
 This project is based on the ideas described in a blog post by Heiko Behrens (http://heikobehrens.net/2009/04/23/generation-gap-pattern/) and a basic implementation in MWE 2 (http://download.eclipse.org/modeling/emft/mwe/javadoc/2.3/org/eclipse/emf/mwe2/ecore/EcoreGenerator.html)
 
-h2. Installation
+## Installation
 
 %TODO...
 
-h3. Requirements
+### Requirements
 
 * Java SE 5
 
 * Eclipse 3.5+ (Galileo)
 
-h2. Basic usage
+## Basic usage
 
 1. Create in the src folder a new mwe2 file
 
 2. Copy paste this source
 
-```
+```java
 module myModule
 
 import org.eclipse.emf.mwe.utils.*
@@ -65,17 +65,16 @@ Import-Package: javax.inject;version="[1.0.0,2.0.0)";resolution:=optional,
  
  Require-Bundle: org.eclipse.emf.mwe2.launch;bundle-version="[2.3.0,3.0.0)";resolution:=optional,
  org.eclipse.emf.mwe2.lib;bundle-version="[2.3.0,3.0.0)";resolution:=optional,
-
 ```
 
 7. Select mwe 2 Click Run as Mwe2 Workflow (Maybe you have to create first the edit bundle if not exists)
 
-h3. Generate source headless(Maven)
+### Generate source headless(Maven)
 
 There is a Maven plugin from fornax to generate the source files
 Example:
-```
 
+```xml
   <build>
 		<resources>
 			<resource>
@@ -134,49 +133,48 @@ Example:
 			</plugin>
 		</plugins>
 	</build>
-
 ```
 
 Replace myModule (workflowDescriptor) with your moduleName in the mwe2 file.
 
-h3. GenGapModel Options
+### GenGapModel Options
 
-h4. Model
+#### Model
 
 * **customClassNamePattern** Pattern for deriving custom implementation and item provider names from model element names ("{0}CustomImpl" by default)
 * **generateCustomClasses** Whether all custom implementation classes should be generated  
 * **customModelDirectory** The target directory for custom model code
 * **cleanModelDirectory** Whether the source folder containing generated model classes should be cleaned
 
-h4. Edit
+#### Edit
 
 * **generateCustomProviders** Whether all custom item providers should be generated  
 * **customEditDirectory** The target directory for custom edit code
 * **cleanEditDirectory** Whether the source folder containing generated item provider should be cleaned
 
-h3. GenGapPackage Options
+### GenGapPackage Options
 
-h4. Model
+#### Model
 
 * **customClassPackageSuffix** The suffix of the package for custom model class
 
-h4. Edit
+#### Edit
 
 * **customProviderPackageSuffix** The suffix of the package for custom item providers
 
-h2. Limitations
+## Limitations
 
 It is not possible to reference a Loophole Generator (.gengapmodel) model from another one. Then it is not possible to create customized Ecore models that reference each others.
 
-h2. Build
+## Build
 
 Go to @org.eclipselabs.emf.loophole-parent@ and do a @mvn clean package@.
 
-h2. Contribute
+## Contribute
 
 Clone this repository, import all projects in your Eclipse and set your target platform to the one in @org.eclipselabs.emf.loophole-parent/targetPlatforms@.
 
-h2. License
+## License
 
 Copyright (c) 2013 Obeo. All rights reserved. This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html 
 
