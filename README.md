@@ -158,10 +158,6 @@ Replace myModule (workflowDescriptor) with your moduleName in the mwe2 file.
 
 * **customProviderPackageSuffix** The suffix of the package for custom item providers
 
-## Limitations
-
-It is not possible to reference a Loophole Generator (.gengapmodel) model from another one. Then it is not possible to create customized Ecore models that reference each others.
-
 ## Build
 
 Go to @org.eclipselabs.emf.loophole-parent@ and do a @mvn clean package@.
