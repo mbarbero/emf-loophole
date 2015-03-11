@@ -11,7 +11,7 @@ This project is based on the ideas described in a blog post by Heiko Behrens (ht
 
 The EMF Loophole MWE2 Workflow is released under Eclipse p2 repository (update-site) in your update manager (in Eclipse, Help Menu > Install New Software..., Add... button on the top right corner):
 
-[P2 Update Site Version 1.0.0] (http://sirwayne.github.io/loophole-p2/1.0.0-SNAPSHOT/)
+Version 1.0.0 P2 Update site: http://sirwayne.github.io/loophole-p2/1.0.0-SNAPSHOT/
 
 ## Basic usage
 
