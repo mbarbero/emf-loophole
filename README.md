@@ -54,13 +54,16 @@ Workflow {
 
 6. You need follow dependencies in your manifest
 ```
+Require-Bundle: org.eclipse.emf.mwe2.launch;bundle-version="[2.3.0,3.0.0)";resolution:=optional,
+ org.eclipse.emf.mwe2.lib;bundle-version="[2.3.0,3.0.0)";resolution:=optional,
+ org.eclipse.jdt.core;bundle-version="3.10.2";resolution:=optional,
+ org.eclipse.core.resources;bundle-version="3.9.1";resolution:=optional,
+ org.eclipse.text;bundle-version="3.5.300";resolution:=optional,
 Import-Package: javax.inject;version="[1.0.0,2.0.0)";resolution:=optional,
  org.apache.commons.logging;version="[1.1.1,2.0.0)";resolution:=optional,
  org.apache.log4j;version="1.2.15";resolution:=optional,
+ org.eclipselabs.emf.loophole.internal.model.metadata;version="1.0.0";resolution:=optional,
  org.eclipselabs.emf.loophole.workflow;version="[1.0.0,2.0.0)";resolution:=optional
- 
- Require-Bundle: org.eclipse.emf.mwe2.launch;bundle-version="[2.3.0,3.0.0)";resolution:=optional,
- org.eclipse.emf.mwe2.lib;bundle-version="[2.3.0,3.0.0)";resolution:=optional,
 ```
 
 7. Select mwe 2 Click Run as Mwe2 Workflow (Maybe you have to create first the edit bundle if not exists)
