@@ -5,11 +5,7 @@
   <properties size="1">
     <property name="p2.timestamp" value="43"/>
   </properties>
-  <children size="5">
-    <child location="2.5/target/repository"/>
-    <child location="2.6/target/repository"/>
-    <child location="2.7/target/repository"/>
-    <child location="2.8/target/repository"/>
+  <children size="1">
     <child location="2.9/target/repository"/>
   </children>
 </repository>

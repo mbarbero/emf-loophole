@@ -18,7 +18,6 @@
       %license
    </license>
 
-
    <plugin
          id="org.eclipselabs.emf.loophole"
          download-size="0"
@@ -27,26 +26,9 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipselabs.emf.loophole.ui"
+         id="org.eclipselabs.emf.loophole.workflow"
          download-size="0"
          install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipselabs.emf.loophole_2.8"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         fragment="true"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipselabs.emf.loophole.util_2.9"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         fragment="true"
-         unpack="false"/>
+         version="0.0.0"/>
 
 </feature>
